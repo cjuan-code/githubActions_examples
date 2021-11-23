@@ -2,6 +2,7 @@ name: main_workflow
 on: [push]
 jobs:
   linter-execution:
+    runs-on: ubuntu:lastest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
