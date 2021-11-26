@@ -3,6 +3,7 @@ on: [push]
 jobs:
   linter-execution:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/nodejs_jest_job'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -16,6 +17,7 @@ jobs:
           VALIDATE_JAVASCRIPT_ES: true
   test-execution:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/nodejs_jest_job'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
