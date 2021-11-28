@@ -35,6 +35,7 @@ jobs:
     steps:
       - name: greet
         uses: adeloyedeji/github-actions-hello@v1.0
-        env:
-          DESTINATION_PERSON: 2DAW
-          who-to-greet: "Hello $DESTINATION_PERSON"
+        with:
+          env:
+            DESTINATION_PERSON: 2DAW
+            who-to-greet: "Hello $DESTINATION_PERSON"
