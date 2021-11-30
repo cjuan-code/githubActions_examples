@@ -12,7 +12,7 @@ jobs:
         uses: actions/upload-artifact@v2 
         with:
           name: react_project
-          path: my_project/build/
+          path: build/
   deploy:
     runs-on: ubuntu-latest
     steps:
