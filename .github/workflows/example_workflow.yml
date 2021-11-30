@@ -1,0 +1,29 @@
+name: example_workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run build
+        run: npm install && npm run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2 
+        with:
+          name: react_project
+          path: my_project/build/
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: react_project
+      - name: Deploy on surge
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'cjuan-example-react.surge.sh'
+          project: '.'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}
