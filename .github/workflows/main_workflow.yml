@@ -11,6 +11,6 @@ jobs:
         uses: ./.github/actions/hello-world-javascript-action
         id: hello
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: '2DAW'
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
