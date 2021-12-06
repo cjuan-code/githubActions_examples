@@ -1,0 +1,18 @@
+name: 'modify_readme'
+on: [push]
+jobs:
+  test-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run jest tests
+        run: npm install jest && npm test
+  modify_readme:
+    needs: test-execution
+    runs-on: ubuntu-latest
+    uses: ./.github/actions
+    with:
+      frase_positiva: "Los tests han funcionado y lo sabes"
+      frase_negativa: "Los tests han fallado y lo sabes"
+      resultado_tests: ${{ needs.test-execution.result }}
