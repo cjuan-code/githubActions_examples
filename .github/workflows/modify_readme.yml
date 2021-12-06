@@ -1,4 +1,4 @@
-name: 'modify_readme'
+name: modify_readme
 on: [push]
 jobs:
   test-execution:
