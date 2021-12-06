@@ -8,11 +8,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Run jest tests
         run: npm install jest && npm test
+      
   modify_readme:
     needs: test-execution
     runs-on: ubuntu-latest
-    uses: ./.github/actions
-    with:
-      frase_positiva: "Los tests han funcionado y lo sabes"
-      frase_negativa: "Los tests han fallado y lo sabes"
-      resultado_tests: ${{ needs.test-execution.result }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Modify README
+        uses: ./.github/actions
+        with:
+          frase_positiva: "Los tests han funcionado y lo sabes"
+          frase_negativa: "Los tests han fallado y lo sabes"
+          resultado_tests: ${{ needs.test-execution.result }}
