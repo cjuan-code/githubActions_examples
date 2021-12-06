@@ -1684,9 +1684,9 @@ var frase_negativa = core.getInput("frase_negativa");
 var result = core.getInput("resultado_tests");
 
 if (result == 'sucess') {
-    fs.writeFileSync('README.md', '# ' + frase_positiva);
+    fs.writeFileSync('./README.md', '# ' + frase_positiva);
 } else if (result == 'failure') {
-    fs.writeFileSync('README.md', '# ' + frase_negativa);
+    fs.writeFileSync('./README.md', '# ' + frase_negativa);
 }
 
 console.log('Meme añadido al readme');
