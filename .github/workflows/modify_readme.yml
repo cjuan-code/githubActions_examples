@@ -15,9 +15,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - run: sudo apt-get install -y graphicsmagick
       - name: Modify README
         uses: ./.github/actions
         with:
           frase_positiva: "Los tests han funcionado y lo sabes"
           frase_negativa: "Los tests han fallado y lo sabes"
           resultado_tests: ${{ needs.test-execution.result }}
+      - name: Commit repo
+        run: |
+          git config user.email "actionsbot@github.com"
+          git config user.name "actionsbot"
+          git add .
+          git commit -m "Add meme image to readme"
+          git remote set-url origin https://cjuan-code:${{ secrets.TOKEN_FOR_MEME }}@github.com/cjuan-code/githubActions_examples.git
+          git push
