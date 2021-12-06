@@ -1,4 +1,3 @@
-// var fs = require('fs');
 let memeMaker = require('meme-maker');
 var core = require('@actions/core')
 
@@ -51,10 +50,8 @@ function generateFailedMeme() {
 }
 
 if (result == 'success') {
-    // fs.writeFileSync('./README.md', '# ' + frase_positiva);
     generateSucessMeme()
 } else if (result == 'failure') {
-    // fs.writeFileSync('./README.md', '# ' + frase_negativa);
     generateFailedMeme()
 }
 

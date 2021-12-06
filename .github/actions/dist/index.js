@@ -7116,7 +7116,6 @@ module.exports = {"version":"1.23.1"};
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-// var fs = require('fs');
 let memeMaker = __nccwpck_require__(6198);
 var core = __nccwpck_require__(966)
 
@@ -7169,10 +7168,8 @@ function generateFailedMeme() {
 }
 
 if (result == 'success') {
-    // fs.writeFileSync('./README.md', '# ' + frase_positiva);
     generateSucessMeme()
 } else if (result == 'failure') {
-    // fs.writeFileSync('./README.md', '# ' + frase_negativa);
     generateFailedMeme()
 }
 
