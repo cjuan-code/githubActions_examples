@@ -11,6 +11,7 @@ jobs:
       
   modify_readme:
     needs: test-execution
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
