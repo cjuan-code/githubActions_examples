@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/cjuan-code/githubActions_examples#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0",
     "@vercel/ncc": "^0.33.0",
     "node-telegram-bot-api": "^0.54.0"
   }
