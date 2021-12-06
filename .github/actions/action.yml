@@ -1,0 +1,5 @@
+name: 'Send telegram msg'
+description: 'Greet someone and send telegram message'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

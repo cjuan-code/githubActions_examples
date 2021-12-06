@@ -1,0 +1,15 @@
+name: send_telegram_workflow
+on: [push]
+jobs:
+  envio_mensaje:
+    runs-on: ubuntu-latest
+    name: send message
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Send msg
+        uses: ./.github/actions
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          PERSON: 'cjuan'
